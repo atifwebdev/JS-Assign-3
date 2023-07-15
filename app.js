@@ -90,6 +90,58 @@ document.querySelector("#ques6").addEventListener("click", () => {
 });
 
 // Question 7
+document.querySelector("#ques7").addEventListener("click", () => {
+    let inpVal = document.querySelector("#inpPldrm").value;
+    let toSmall = inpVal.toLowerCase();
+    let revWord = "";
+    for(let i=toSmall.length - 1; i>=0; i--){
+        revWord += toSmall[i];  
+    }
+    if(toSmall === revWord){
+        alert(inpVal + " is Palindrome");
+    }else{
+        alert(inpVal + " is not Palindrome");
+    }
+});
 
+// Question 8
+document.querySelector("#ques8a").addEventListener("click", () => {
+    let inpVal = document.querySelector("#repWord").value;
+    let getPara = document.querySelector("#para").innerHTML;
+    let replaceVal = prompt("Enter text to replace your input text from paragraph");
+    document.querySelector("#para").innerHTML = getPara.replace(inpVal, replaceVal);
+});
+document.querySelector("#ques8b").addEventListener("click", () => {
+    let inpVal = document.querySelector("#repWord").value;
+    let getPara = document.querySelector("#para").innerHTML;
+    let replaceVal = prompt("Enter text to replace your input text from paragraph");
+    document.querySelector("#para").innerHTML = getPara.replaceAll(inpVal, replaceVal);
+    console.log(getPara.replaceAll(inpVal, replaceVal));
+});
 
+// Question 9
+document.querySelector("#ques9").addEventListener("click", () => {
+    let getPara = document.querySelector("#stPara").innerHTML;
+    let toSmall = getPara.toLowerCase();
+    let arr = toSmall.split(' ');
+    console.log(arr);
+    let count = 0;
+    for(let i=0; i<=arr.length; i++){
+        if("the" === arr[i]){
+           count = count+1;
+        }
+    }
+    alert("Word 'The' count in para: " + count); 
+});
 
+// Question 10
+document.querySelector("#ques10").addEventListener("click", () => {
+    let inpVal = document.querySelector("#searchInp").value;
+    let toSmall = inpVal.toLowerCase();
+    let arr = ["cake", "apple pie", "cookie", "chips", "patties"];
+    for(let i=0; i<=arr.length; i++){
+        if(toSmall === arr[i]){
+           alert(inpVal+ " is found at " + i);
+        }
+    }
+});
